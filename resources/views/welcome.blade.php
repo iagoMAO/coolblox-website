@@ -1,13 +1,36 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-left pb-2">
         <div class="col-auto p-0">
             <div id="login-box" class="box-container">
                 <h5 class="box-header">
                     Member Login
                 </h5>
+                <div class="box-content">
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
+                        <div class="login-input-group">
+                            <label for="name">Character Name</label>
+                            <input id="login-input" type="name" class="input" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                        </div>
+                        <div class="login-input-group">
+                            <label for="password">Password</label>
+                            <input id="login-input" type="password" class="input" name="password" value="{{ old('password') }}" required autocomplete="password" autofocus>
+                        </div>
+                        <div class="login-input-group justify-content-center text-center">
+                            <button type="submit" class="button">
+                                {{ __('Login') }}
+                            </button>
+                        </div>
+                        <div class="login-input-group justify-content-center text-center">
+                            <a href="/register" class="button">
+                                {{ __('Register') }}
+                            </a>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
         <div class="col-auto px-2">

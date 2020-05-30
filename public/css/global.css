@@ -15,15 +15,20 @@ a:hover {
 body, html {
     width: 100%;
     height: 100%;
+    position: absolute;
     background-color: #fff;
     font-family: Comic Sans MS;
+    overflow: auto;
 }
 
 #app {
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    overflow: auto;
+    left: 0;
+    position: relative;
     background: url('../../img/res/bg_clouds.jpg') no-repeat center top;
-    background-size: 100%;
+    background-size: cover;
 }
 
 .page-content {
@@ -81,6 +86,14 @@ body, html {
     display: inline;
 }
 
+.nav-link a {
+    color: #fff;
+}
+
+.nav-link a:hover {
+    color: #fff;
+}
+
 .banner {
     background: url('../../img/res/WoodBanner.png') no-repeat;
     height: 72px;
@@ -100,9 +113,27 @@ body, html {
 
 /* useful stuff */
 
+a {
+    color: #00F;
+}
+
+a:hover {
+    color: #00F;
+}
+
+footer {
+    font-size: 9px;
+    text-align: center;
+    font-family: Verdana;
+}
+
 .box-container {
     background-color: #eee;
     border: 1px solid #000;
+}
+
+.box-content {
+    padding: 0px 5px 0px 5px;
 }
 
 .box-header {
@@ -112,6 +143,67 @@ body, html {
     padding: 5px;
     font-size: 11px;
     letter-spacing: 1px;
+    margin: 0px;
+}
+
+label {
+    font-size: 11px;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.input {
+    border-color: #777;
+    border-style: dashed;
+    font-family: sans-serif;
+    height: 18px;
+}
+
+form {
+    margin: 0px;
+    padding: 0px;
+}
+
+.button {
+    height: 20px;
+    cursor: pointer;
+    font-family: Verdana;
+    font-size: 10px;
+    padding: 3px 10px 3px 10px;
+    background-color: #fff;
+    border: 1px solid #777;
+    color: #777;
+    line-height: 10px;
+}
+
+.button:hover {
+    border-color: #000;
+    color: #fff;
+    background-color: #6e99c9;
+    text-decoration: underline;
+}
+
+.button-large {
+    background-color: #F5CD2F;
+    color: #000;
+    font-family: Verdana;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #6e99c9;
+    margin: 8px 0px 8px 0px;
+}
+
+.button-large:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+}
+
+.legalase {
+    width: 800px;
 }
 
 /* frontpage */
@@ -119,6 +211,14 @@ body, html {
 #login-box {
     width: 150px;
     height: 252px;
+}
+
+.login-input-group {
+    margin-bottom: 8px;
+}
+
+#login-input {
+    width: 133px;
 }
 
 #trailer-box {
@@ -158,4 +258,46 @@ body, html {
     font-weight: bold;
     font-size: 12pt;
     letter-spacing: 2px;
+}
+
+/* LOGIN PAGE */
+
+#login-main-box {
+    width: 550px;
+    height: 250px;
+    border: 1px solid #6e99c9;
+    background-color: #eee;
+    margin-top: 50px;
+    font-family: Verdana;
+}
+
+.login-main-form {
+    text-align: right;
+    width: 180px;
+}
+
+.login-main-input {
+    width: 120px;
+    font-size: 9px;
+}
+
+.login-main-form label {
+    display: block;
+}
+
+.button-weird {
+    height: 18px;
+    font-size: 10px;
+    line-height: 5px;
+}
+
+.login-main-right {
+    width: 200px;
+    height: 220px;
+    background-color: #dcdcdc;
+    float: right;
+}
+
+.login-main-right p {
+    font-size: 10px;
 }

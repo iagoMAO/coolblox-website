@@ -39,8 +39,9 @@
                         </a>
                     </div>
                 </div>
+                @if(!Request::segment(1) == "login" || !Request::segment(1) == "register")
                 <div class="nav-navbar">
-                    <div class="nav-links px-5">
+                    <div class="nav-links px-5 text-center">
                         <div class="nav-link p-2">
                             <a href="/home">
                                 My {{config('app.name')}}
@@ -66,11 +67,35 @@
                         </div>
                     </div>
                 </div>
+                @endif
             </nav>
 
             <main class="content py-3">
                 @yield('content')
             </main>
+            <footer>
+                <hr>
+                <a href="#">
+                    <strong>Privacy Policy</strong>
+                </a>
+                |
+                <a href="#">Advertise with Us</a>
+                |
+                <a href="#">Contact Us</a>
+                |
+                <a href="#">About Us</a>
+                |
+                <a href="#">Related Resources</a>
+                |
+                <a href="#">Jobs</a>
+                <hr>
+                <div class="legalase ml-auto mr-auto">
+                    {{config('app.name')}}, "Online Building Toy", characters, logos, names, and all related indicia are trademarks of {{config('app.name')}} Corporation, ©2020. Patents pending.
+                    {{config('app.name')}} is not sponsored, authorized or endorsed by any producer of plastic building bricks, including The LEGO Group, MEGA Brands, and K'Nex,
+                    and no resemblance to the products of these companies is intended.
+                    Use of this site signifies your acceptance of the Terms and Conditions.
+                </div>
+            </footer>
         </div>
     </div>
 </body>
