@@ -8,24 +8,27 @@
                 <div class="col-auto">
                     <h6 style="font-weight: bold">Log In</h6>
                     <div class="login-main-form">
-                        <div class="login-input-group">
-                            <label for="name">User Name:</label>
-                            <input class="login-main-input"></input>
-                        </div>
-                        <div class="login-input-group">
-                            <label for="name">Password:</label>
-                            <input class="login-main-input"></input>
-                        </div>
-                        <div class="login-input-group">
-                            <input type="submit" class="button-weird" value="Log In"></input>
-                        </div>
+                        <form method="POST" action="{{ route('login') }}">
+                            @csrf
+                            <div class="login-input-group">
+                                <label for="name">User Name:</label>
+                                <input type="text" name="name" class="login-main-input"></input>
+                            </div>
+                            <div class="login-input-group">
+                                <label for="password">Password:</label>
+                                <input type="password" name="password" class="login-main-input"></input>
+                            </div>
+                            <div class="login-input-group">
+                                <input type="submit" class="button-weird" value="Log In"></input>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <div class="col-auto ml-auto">
                     <div class="login-main-right px-3 py-2">
                         <h6 style="font-weight:bold">New User?</h6>
                         <p>
-                            You need an account to play {{config('app.name')}}.
+                            You need an account to play {{ strtoupper(config('app.name')) }}.
                         </p>
                         <a href="/" class="button-large">Play as Guest</a>
                         <a href="/register" class="button-large">Sign Up</a>

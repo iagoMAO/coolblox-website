@@ -14,9 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $fgame = \App\Game::all()->random();
+    $user = \App\User::where('id', '=', $fgame->uid)->first();
+    return view('welcome', ["game" => $fgame, "user" => $user]);
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/games', 'GamesController@index');
+Route::get('/place/{id}', 'PlaceController@view');
+Route::get('/user/{id}', 'ProfileController@view');

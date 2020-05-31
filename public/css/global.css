@@ -2,33 +2,25 @@
    IT IS COOL
 */
 
-a {
-    color: #fff;
-    text-decoration: none;
-}
-
 a:hover {
     color: #fff;
     text-decoration: underline;
 }
 
 body, html {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: #fff;
     font-family: Comic Sans MS;
     overflow: auto;
+}
+
+body {
+    background: #f8fcff url('../../img/res/bg_gradient.jpg') repeat-x top;
 }
 
 #app {
     width: 100%;
     height: 100%;
-    overflow: auto;
-    left: 0;
-    position: relative;
     background: url('../../img/res/bg_clouds.jpg') no-repeat center top;
-    background-size: cover;
+    background-attachment: local;
 }
 
 .page-content {
@@ -144,6 +136,20 @@ footer {
     font-size: 11px;
     letter-spacing: 1px;
     margin: 0px;
+}
+
+#box-header-large {
+    font-size: 22px;
+    text-align: center;
+    font-family: Comic Sans MS;
+    font-weight: bold;
+}
+
+#box-header-medium {
+    font-size: 14px;
+    text-align: center;
+    font-family: Comic Sans MS;
+    font-weight: Bold;
 }
 
 label {
@@ -265,7 +271,7 @@ form {
 #login-main-box {
     width: 550px;
     height: 250px;
-    border: 1px solid #6e99c9;
+    border: 2px solid #6e99c9;
     background-color: #eee;
     margin-top: 50px;
     font-family: Verdana;
@@ -300,4 +306,402 @@ form {
 
 .login-main-right p {
     font-size: 10px;
+}
+
+/* REGISTER PAGE */
+
+#register-box {
+    width: 670px;
+}
+
+#register-already-box {
+    width: 200px;
+}
+
+.register-already-content {
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10px;
+}
+
+.register-box-container {
+    width: 400px;
+    height: 100%;
+    text-align: center;
+}
+
+#register-box-header {
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #555;
+}
+
+.register-block {
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+.register-fieldset {
+    margin-top: 20px;
+}
+
+.register-fieldset legend {
+    font-size: 15px;
+    margin: 0px;
+}
+
+.register-fieldset-p {
+    font-size: 10px;
+    color: #777;
+    font-family: Verdana;
+}
+
+.register-fieldset-username {
+    text-align: right;
+}
+
+.register-fieldset-username label {
+    font-size: 14px;
+    color: #333;
+}
+
+.register-fieldset-username input {
+    height: 40px;
+    font-size: 16px;
+    border: 2px dashed #777;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#sign-up-button {
+    width: 100%;
+    font-size: 20px;
+    padding: 15px;
+    font-family: Comic Sans MS;
+    border: 1px solid #000;
+}
+
+#last {
+    border: 0;
+}
+
+#register-terms-box {
+    width: 200px;
+}
+
+.register-terms-content {
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10px;
+}
+
+/* logged in stuff */
+
+#user-panel {
+    padding: 5px;
+    margin-top: 15px;
+    margin-right: 5px;
+    font-family: Verdana;
+}
+
+.tickets-icon {
+    background-image: url('../../img/res/icons/Tickets.png');
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+.tickets-label {
+    color: #FBB117;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.user-panel-content {
+    display: inline-block;
+}
+
+/* GAMES PAGE */
+
+.games-category {
+    font-family: Verdana;
+}
+
+.games-category h2 {
+    font-size: 30px;
+}
+
+.games-category-header {
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.games-bullet {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url('../../img/res/icons/games_bullet.png');
+}
+
+.game-category {
+    font-size: 12px;
+}
+
+.games-header {
+    font-size: 16px;
+    padding-bottom: 8px;
+}
+
+.games-games {
+    width: 740px;
+}
+
+.games-games-container {
+    width: 550px;
+}
+
+.place-container {
+    width: 162px;
+}
+
+.place-thumbnail {
+    width: 162px;
+    border: 1px solid #000;
+}
+
+.place-name {
+    font-family: Verdana;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.place-details {
+    font-family: Verdana;
+    font-size: 9px;
+    font-weight: bold;
+    height: 12px;
+}
+
+.place-detail-string {
+    font-weight: normal;
+}
+
+#place-counter {
+    color: #F00;
+}
+
+.place-thumbnail img {
+    min-height: 100px;
+    max-height: 100px;
+    max-width: 160px;
+    min-width: 160px;
+}
+
+.games-pagination {
+    display: block;
+    font-family: Verdana;
+    font-size: 11px;
+}
+
+/* PLACE PAGE */
+
+#place-box {
+    width: 725px;
+}
+
+.place-box-container {
+    padding: 10px;
+}
+
+.place-big-thumbnail {
+    width: 422px;
+    border: 1px solid #000;
+}
+
+.place-big-thumbnail img {
+    max-width: 420px;
+    min-width: 420px;
+    max-height: 230px;
+    min-height: 230px;
+}
+
+.place-big-area {
+    width: 422px;
+    border: 1px dashed green;
+    background-color: #ccc;
+}
+
+.place-big-playbtn {
+    background-image: url('../../img/res/game/Play.png');
+    width: 250px;
+    height: 48px;
+    display: block;
+}
+
+.place-big-public {
+    background-image: url('../../img/res/icons/public.png');
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+.place-big-public-text {
+    font-family: Verdana;
+    font-size: 11px;
+    color: green;
+}
+
+.place-big-copy {
+    background-image: url('../../img/res/icons/CopyLocked.png');
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+.place-big-info {
+    border: 1px dashed #555;
+    width: 272px;
+    padding: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: Verdana;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+.place-big-info h3 {
+    font-size: 17px;
+    font-weight: normal;
+    color: #555;
+    letter-spacing: 1px;
+    margin: 0px;
+}
+
+.place-big-avatar img {
+    max-height: 100px;
+}
+
+#place-big-details {
+    color: #555;
+    font-weight: normal;
+    font-size: 11px;
+    height: 13px;
+}
+
+.place-big-description {
+    width: 250px;
+    border: 1px solid #555;
+    font-size: 11px;
+    padding: 2px;
+    color: #555;
+}
+
+/* USER PROFILE */
+
+#profile-box-container {
+    width: 444px;
+    font-family: Verdana;
+    background-color: #b0c4de;
+    padding: 8px;
+}
+
+#profile-box-container h5 {
+    margin-bottom: 10px;
+}
+
+.profile-box-text {
+    font-size: 10px;
+    display: block;
+    height: 12px;
+}
+
+.profile-desc-box {
+    width: 270px;
+}
+
+.profile-desc-box p {
+    width: 270px;
+    margin: 0px;
+    word-wrap: break-word;
+    font-size: 11px;
+}
+
+#showcase-header {
+    background-color: #6e99c9;
+    font-family: Verdana;
+    letter-spacing: 1px;
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+}
+
+#profile-box-showcase {
+    width: 448px;
+    background-color: transparent;
+}
+
+#showcase-place-header {
+    text-align: left;
+    letter-spacing: 1px;
+    font-weight: bold;
+    padding: 2px 15px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    border-top: 1px solid #000;
+}
+
+#showcase-place-header:hover {
+    background-color: #6e99c9;
+    color: #fff;
+    cursor: pointer;
+}
+
+.showcase-place-content {
+    padding: 10px;
+    text-align: center;
+}
+
+.showcase-place-description {
+    border: 1px dashed #555;
+    width: 422px;
+    padding: 5px;
+    display: block;
+    color: #555;
+    font-family: verdana;
+    font-size: 11px;
+    text-align: left;
+    overflow: auto;
+    max-height: 85px;
+}
+
+/* FEATURED PLACE INDEX */
+
+#featured-place-header {
+    padding: 8px;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.featured-place-detail {
+    font-size: 11px;
+    text-align: center;
+    height: 15px;
+}
+
+.featured-place-avatar {
+    text-align: center;
+    width: 100%;
+}
+
+.featured-place-avatar img {
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 100px;
 }

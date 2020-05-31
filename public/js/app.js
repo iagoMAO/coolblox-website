@@ -37227,6 +37227,12 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+function showPlace(id) {
+  var pid = id;
+  $('#place' + pid).slideToggle('slow');
+  console.log('place' + pid);
+}
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

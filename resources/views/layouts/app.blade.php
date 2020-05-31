@@ -11,7 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <script src="{{ asset('js/global.js') }}" defer></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -26,12 +26,29 @@
             <nav class="nav-nav">
                 <div class="banner">
                     <div class="justify-content-center text-center nav-play">
-                        <a href="/register">
-                            <img class="nav-logo-rbx" src="{{asset('/img/res/Holiday3Button.png')}}">
-                        </a>
+                        @guest
+                            <a href="/register">
+                                <img class="nav-logo-rbx" src="{{asset('/img/res/Holiday3Button.png')}}">
+                            </a>
+                        @else
+                            <div class="box-container" id="user-panel">
+                                <div class="user-panel-content">
+                                    <span class="tickets-icon"></span>
+                                    <span class="tickets-label">0 Tickets</span>
+                                </div>
+                            </div>
+                        @endguest
                     </div>
                     <div class="nav-options">
+                        @guest
                         <a href="/login" class="p-1 nav-options-link">Login</a>
+                        @else
+                            <span class="pl-1 nav-options-link">Logged in as {{ Auth::user()->name }} |</span>
+                            <a class="nav-options-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                            <form id='logout-form' action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        @endguest
                     </div>
                     <div class="nav-logo ml-auto mr-auto text-center">
                         <a href="/">
@@ -39,12 +56,11 @@
                         </a>
                     </div>
                 </div>
-                @if(!Request::segment(1) == "login" || !Request::segment(1) == "register")
                 <div class="nav-navbar">
                     <div class="nav-links px-5 text-center">
                         <div class="nav-link p-2">
                             <a href="/home">
-                                My {{config('app.name')}}
+                                My {{ strtoupper(config('app.name')) }}
                             </a>
                         </div>
                         <span class="nav-seperator">|</span>
@@ -67,7 +83,6 @@
                         </div>
                     </div>
                 </div>
-                @endif
             </nav>
 
             <main class="content py-3">
@@ -90,8 +105,8 @@
                 <a href="#">Jobs</a>
                 <hr>
                 <div class="legalase ml-auto mr-auto">
-                    {{config('app.name')}}, "Online Building Toy", characters, logos, names, and all related indicia are trademarks of {{config('app.name')}} Corporation, ©2020. Patents pending.
-                    {{config('app.name')}} is not sponsored, authorized or endorsed by any producer of plastic building bricks, including The LEGO Group, MEGA Brands, and K'Nex,
+                    {{ strtoupper(config('app.name')) }}, "Online Building Toy", characters, logos, names, and all related indicia are trademarks of {{config('app.name')}} Corporation, ©2020. Patents pending.
+                    {{ strtoupper(config('app.name')) }} is not sponsored, authorized or endorsed by any producer of plastic building bricks, including The LEGO Group, MEGA Brands, and K'Nex,
                     and no resemblance to the products of these companies is intended.
                     Use of this site signifies your acceptance of the Terms and Conditions.
                 </div>
