@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-left">
         <div class="col-auto p-0">
             <div class="box-container text-center" id="profile-box-container">
@@ -9,7 +9,7 @@
                 <span class="profile-box-text">
                     {{$user->name}}'s {{strtoupper(config('app.name'))}}:
                 </span>
-                <a class="profile-box-text" href="#">http://www.roblox.com/User.aspx?ID=2005467</a>
+                <a class="profile-box-text" href="{{config('app.url')}}/user/{{$user->id}}">{{config('app.url')}}/user/{{$user->id}}</a>
                 <div class="row justify-content-left pt-3 m-0">
                     <div class="col-auto p-0">
                         <div class="profile-avatar-box">

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-left pb-2">
         <div class="col-auto p-0">
             <div id="login-box" class="box-container">

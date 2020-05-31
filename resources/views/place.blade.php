@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-left">
         <div class="box-container" id="place-box">
             <h5 id="box-header-large" class="box-header">{{$place->name}}</h5>
