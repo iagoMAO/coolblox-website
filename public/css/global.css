@@ -257,6 +257,11 @@ form {
     height: 152px;
     text-align: center;
     background-color: #fff;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+#roblox-facts .container {
     padding: 8px;
 }
 
@@ -264,6 +269,11 @@ form {
     font-weight: bold;
     font-size: 12pt;
     letter-spacing: 2px;
+    z-index: 1;
+    position: relative;
+    background-color: #fff;
+    display: block;
+    padding: 10px;
 }
 
 /* LOGIN PAGE */
@@ -705,3 +715,51 @@ form {
     margin-right: auto;
     max-height: 100px;
 }
+
+/* FRONTPAGE MARQUEE THING */
+
+.frontpage-house-icon {
+    width: 32px;
+    height: 32px;
+    background-image: url('../../img/fp/icons/House.png');
+    display: inline-block;
+    z-index: 0;
+}
+
+.frontpage-marquee-text {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    z-index: 0;
+    margin-bottom: 5px;
+}
+
+.frontpage-marquee-text a {
+    vertical-align: middle;
+    z-index: 0;
+}
+
+.frontpage-marquee-text span {
+    line-height: 32px;
+    display: inline-block;
+    vertical-align: middle;
+    z-index: 0;
+}
+
+.marqueepls {
+    animation: marquee 20s linear infinite;
+    z-index: 0;
+}
+
+.marqueepls div {
+    z-index: 0;
+}
+
+.marqueepls:hover{
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0% { transform: translateY(100%); z-index:0; position:relative; }
+    100% { transform: translateY(-152%); z-index:0; position:relative; }
+} 

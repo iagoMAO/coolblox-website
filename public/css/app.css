@@ -79,12 +79,6 @@ body {
   outline: 0 !important;
 }
 
-hr {
-  box-sizing: content-box;
-  height: 0;
-  overflow: visible;
-}
-
 h1,
 h2,
 h3,
@@ -444,13 +438,6 @@ h6,
   font-size: 3.5rem;
   font-weight: 300;
   line-height: 1.2;
-}
-
-hr {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  border: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 small,

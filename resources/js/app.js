@@ -6,3 +6,5 @@ function showPlace(id)
     $('#place' + pid).slideToggle('slow');
     console.log('place' + pid);
 }
+
+$('marqueepls').marquee();

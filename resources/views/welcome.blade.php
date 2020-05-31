@@ -43,7 +43,7 @@
         </div>
         <div class="col-auto px-2">
             <div id="trailer-box" class="box-container">
-            <embed type="application/x-shockwave-flash" src="http://noobtube.asia/2009/player.swf?flvurl=http://passados.local/trailer.mp4" style="" id="movie_player" name="movie_player" bgcolor="#000000" quality="high" allowfullscreen="false" allowscriptaccess="always" flashvars="vq=null&amp;video_id=frog&amp;l=167&amp;sk=Vnur-Y_v1_ydWWGwFDo-lWRFyyrJDLQsC&amp;fmt_map=6/720000/7/0/0&amp;t=OEgsToPDskIaTZRI6WGtBuV7RsPGLEwI&amp;hl=en&amp;plid=AART2Y-pHEmXDvDEAAAAoIQ8YAA&amp;playnext=0&amp;enablejsapi=1" width="424" height="250">
+                <embed type="application/x-shockwave-flash" src="http://noobtube.asia/2009/player.swf?flvurl=http://passados.local/trailer.mp4" style="" id="movie_player" name="movie_player" bgcolor="#000000" quality="high" allowfullscreen="true" allowscriptaccess="always" flashvars="vq=null&amp;video_id=frog&amp;l=167&amp;sk=Vnur-Y_v1_ydWWGwFDo-lWRFyyrJDLQsC&amp;fmt_map=6/720000/7/0/0&amp;t=OEgsToPDskIaTZRI6WGtBuV7RsPGLEwI&amp;hl=en&amp;plid=AART2Y-pHEmXDvDEAAAAoIQ8YAA&amp;playnext=0&amp;enablejsapi=1" width="424" height="250">
             </div>
         </div>
         <div class="col-auto p-0">
@@ -99,9 +99,27 @@
                 <h5>
                     {{ strtoupper(config('app.name')) }} Facts
                 </h5>
-                <p>1 - we are awesome</p>
-                <p>2 - we are awesome</p>
-                <p>3 - we are awesome</p>
+                <div class="container">
+                    <div class="marqueepls">
+                        <div class="frontpage-marquee-text">
+                            <span class="frontpage-house-icon float-left"></span>
+                            <a href="/place/{{$game->id}}">{{$game->name}}</a>
+                            <span>has been favorited <strong>0</strong> times today</span>
+                        </div>
+                        <div class="frontpage-marquee-text">
+                            <span class="frontpage-house-icon float-left"></span>
+                            <span>{{config('app.name')}} is cool!</span>
+                        </div>
+                        <div class="frontpage-marquee-text">
+                            <span class="frontpage-house-icon float-left"></span>
+                            <span>{{config('app.name')}} is cool!</span>
+                        </div>
+                        <div class="frontpage-marquee-text">
+                            <span class="frontpage-house-icon float-left"></span>
+                            <span>{{config('app.name')}} is cool!</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
