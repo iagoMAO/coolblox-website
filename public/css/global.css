@@ -467,7 +467,7 @@ form {
 }
 
 .games-games {
-    width: 740px;
+    width: 720px;
 }
 
 .games-games-container {
@@ -630,7 +630,8 @@ form {
 }
 
 .profile-action-box #disabled {
-    color: #fff;
+    color: #bbb;
+    text-shadow: 1px 1px #fff;
 }
 
 #profile-box-container {

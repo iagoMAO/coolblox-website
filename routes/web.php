@@ -28,3 +28,5 @@ Route::get('/user/{id}', 'ProfileController@view');
 
 Route::get('/place/{id}/edit', 'PlaceController@edit');
 Route::post('/place/{id}/edit', 'PlaceController@doEdit');
+
+Route::get('/api/games/{category}', 'GamesController@ajax_games');

@@ -16,9 +16,9 @@
                             <img src="{{asset('/img/res/player.png')}}">
                         </div>
                     </div>
-                    <div class="col-auto p-0 align-self-center">
-                        <div class="profile-desc-box align-self-center">
-                            <p>test</p>
+                    <div class="col-auto p-0">
+                        <div class="profile-desc-box py-4">
+                            <p>User blurbs are yet to be added. Please be patient!</p>
                         </div>
                     </div>
                 </div>
