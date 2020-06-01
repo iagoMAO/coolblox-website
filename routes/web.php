@@ -25,3 +25,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/games', 'GamesController@index');
 Route::get('/place/{id}', 'PlaceController@view');
 Route::get('/user/{id}', 'ProfileController@view');
+
+Route::get('/place/{id}/edit', 'PlaceController@edit');
+Route::post('/place/{id}/edit', 'PlaceController@doEdit');

@@ -610,7 +610,27 @@ form {
     color: #555;
 }
 
+.place-big-action {
+    border: 1px dashed #777;
+    text-align: center;
+    font-family: Verdana;
+    background-color: #fff;
+    font-size: 11px;
+    margin-top: -1px;
+    padding: 2px;
+}
+
 /* USER PROFILE */
+
+.profile-action-box a {
+    padding-top: 3px;
+    font-size: 11px;
+    display: block;
+}
+
+.profile-action-box #disabled {
+    color: #fff;
+}
 
 #profile-box-container {
     width: 444px;
@@ -631,6 +651,17 @@ form {
 
 .profile-desc-box {
     width: 270px;
+}
+
+.profile-action-box {
+
+}
+
+.profile-action-box p {
+    margin: 0px;
+    word-wrap: break-word;
+    font-size: 11px;
+    margin-top: -3px;
 }
 
 .profile-desc-box p {
@@ -763,3 +794,50 @@ form {
     0% { transform: translateY(100%); z-index:0; position:relative; }
     100% { transform: translateY(-152%); z-index:0; position:relative; }
 } 
+
+/* PLACE EDIT PAGE */
+
+.place-edit-container {
+    font-family: Verdana;
+    text-align: left;
+    color: #777;
+}
+
+.place-edit-container label {
+    display: block;
+}
+
+.place-edit-container input {
+    border: 1px dashed #777;
+    width: 100%;
+    font-size: 12px;
+    height: 25px;
+    padding-left: 10px;
+}
+
+.place-edit-container textarea {
+    border: 1px dashed #777;
+    width: 100%;
+    min-height: 150px;
+    font-size: 12px;
+    height: 25px;
+    padding: 5px;
+}
+
+#place-edit-box {
+    width: 700px;
+}
+
+.place-edit-box-container {
+    width: 400px;
+    height: 100%;
+    text-align: center;
+}
+
+.place-edit-thumbnail {
+    border: 1px solid #000;
+}
+
+.place-edit-thumbnail img {
+    max-height: 199px;
+}

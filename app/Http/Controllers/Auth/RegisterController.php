@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -69,5 +70,18 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    protected function registered(Request $request, $user)
+    {
+        $place = new \App\Game;
+        $place->name = $user->name . "'s place";
+        $place->uid = $user->id;
+        $place->desc = "Configure this place to change the description.";
+        $place->ipv4 = "127.0.0.1";
+        $place->port = 53640;
+        $place->save();
+
+        return redirect()->intended($this->redirectPath());
     }
 }

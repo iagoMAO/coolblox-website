@@ -16,9 +16,14 @@
                             <img src="{{asset('/img/res/player.png')}}">
                         </div>
                     </div>
-                    <div class="col-auto p-0 align-self-center">
-                        <div class="profile-desc-box align-self-center">
-                            <p>test</p>
+                    <div class="col-auto px-5">
+                        <div class="profile-action-box text-left">
+                            <a href="#">Inbox</a>
+                            <a href="#">Change Character</a>
+                            <a href="#">Edit Profile</a>
+                            <a href="/user/{{Auth::user()->id}}">View Public Profile</a>
+                            <a id="disabled">Create New Place</a>
+                            <p>(0 Remaining)</p>
                         </div>
                     </div>
                 </div>

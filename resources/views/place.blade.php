@@ -49,6 +49,11 @@
                                 {{$place->desc}}
                             </div>
                         </div>
+                        @if($owner)
+                            <div class="place-big-action">
+                                <a href="{{$place->id}}/edit">Configure this place</a>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
