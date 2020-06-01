@@ -28,6 +28,9 @@
             <div class="box-container" id="profile-box-showcase">
                 <h5 class="box-header" id="showcase-header">Showcase</h5>
                 @foreach($places as $place)
+                    @php
+                        $owner = $place->uid == Auth::user()->id;
+                    @endphp
                     <div class="showcase-place">
                         <h5 onclick="showPlace({{$place->id}})" class="box-header" id="showcase-place-header">{{$place->name}}</h5>
                         <div @if($loop->first) style="display:block;" @else style="display:none" @endif id="place{{$place->id}}" class="showcase-place-content">
@@ -42,6 +45,11 @@
                             <div class="showcase-place-description">
                                 {{$place->desc}}
                             </div>
+                            @if($owner)
+                            <div class="showcase-place-action">
+                                <a href="/place/{{$place->id}}/edit">Configure this place</a>
+                            </div>
+                            @endif
                         </div>
                     </div>
                 @endforeach

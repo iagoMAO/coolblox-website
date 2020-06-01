@@ -45,9 +45,7 @@
                             <div id="place-big-details" class="place-details mt-2">
                                 <span class="place-detail-label">Description:</span>
                             </div>
-                            <div class="place-big-description my-1">
-                                {{$place->desc}}
-                            </div>
+                            <div class="place-big-description my-1">{{$place->desc}}</div>
                         </div>
                         @if($owner)
                             <div class="place-big-action">

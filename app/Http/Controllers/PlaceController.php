@@ -34,21 +34,30 @@ class PlaceController extends Controller
     public function doEdit($id, Request $request)
     {
         $place = \App\Game::where(["id" => $id, "uid" => Auth::user()->id])->first();
+        $owner = $place->uid == Auth::user()->id;
 
-        $data = $request->validate([
-            "name" => "required|max:32",
-            "desc" => "max:32",
-            "ipv4" => "",
-            "port" => "int",
-        ]);
-
-        $place->update([
-            "name" => $data["name"],
-            "desc" => $data["desc"],
-            "ipv4" => $data["ipv4"],
-            "port" => $data["port"],
-        ]);
-
-        return redirect('place/' . $id);
+        switch ($owner)
+        {
+            case true:
+                $data = $request->validate([
+                    "name" => "required|max:32",
+                    "desc" => "max:128",
+                    "ipv4" => "",
+                    "port" => "int",
+                ]);
+        
+                $place->update([
+                    "name" => $data["name"],
+                    "desc" => $data["desc"],
+                    "ipv4" => $data["ipv4"],
+                    "port" => $data["port"],
+                ]);
+        
+                return redirect('place/' . $id);
+                break;
+            default:
+                return abort(404);
+                break;
+        }
     }
 }
