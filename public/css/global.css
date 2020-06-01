@@ -718,6 +718,7 @@ form {
     text-align: left;
     overflow: auto;
     max-height: 85px;
+    white-space: pre-line;
 }
 
 .showcase-place-action {

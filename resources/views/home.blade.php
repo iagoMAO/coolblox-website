@@ -9,7 +9,7 @@
                 <span class="profile-box-text">
                     Your {{strtoupper(config('app.name'))}}:
                 </span>
-                <a class="profile-box-text" href="#">http://www.roblox.com/User.aspx?ID=2005467</a>
+                <a class="profile-box-text" href="#">{{config('app.url')}}/user/{{$user->id}}</a>
                 <div class="row justify-content-left pt-3 m-0">
                     <div class="col-auto p-0">
                         <div class="profile-avatar-box">
@@ -33,6 +33,9 @@
             <div class="box-container" id="profile-box-showcase">
                 <h5 class="box-header" id="showcase-header">Showcase</h5>
                 @foreach($places as $place)
+                    @php
+                        $owner = $place->uid == Auth::user()->id;
+                    @endphp
                     <div class="showcase-place">
                         <h5 onclick="showPlace({{$place->id}})" class="box-header" id="showcase-place-header">{{$place->name}}</h5>
                         <div @if($loop->first) style="display:block;" @else style="display:none" @endif id="place{{$place->id}}" class="showcase-place-content">
@@ -44,9 +47,12 @@
                                     <img src="{{asset('/img/res/place.png')}}">
                                 </a>
                             </div>
-                            <div class="showcase-place-description">
-                                {{$place->desc}}
+                            <div class="showcase-place-description">{{$place->desc}}</div>
+                            @if($owner)
+                            <div class="showcase-place-action">
+                                <a href="/place/{{$place->id}}/edit">Configure this place</a>
                             </div>
+                            @endif
                         </div>
                     </div>
                 @endforeach

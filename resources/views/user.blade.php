@@ -42,9 +42,7 @@
                                     <img src="{{asset('/img/res/place.png')}}">
                                 </a>
                             </div>
-                            <div class="showcase-place-description">
-                                {{$place->desc}}
-                            </div>
+                            <div class="showcase-place-description">{{$place->desc}}</div>
                             @if($owner)
                             <div class="showcase-place-action">
                                 <a href="/place/{{$place->id}}/edit">Configure this place</a>

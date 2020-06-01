@@ -105,7 +105,7 @@
                 <a href="#">Jobs</a>
                 <hr>
                 <div class="legalase ml-auto mr-auto">
-                    {{ strtoupper(config('app.name')) }}, "Online Building Toy", characters, logos, names, and all related indicia are trademarks of {{config('app.name')}} Corporation, ©2020. Patents pending.
+                    {{ strtoupper(config('app.name')) }}, "Online Building Toy", characters, logos, names, and all related indicia are trademarks of {{config('app.name')}} Corporation, ©{{now()->year}}. Patents pending.
                     {{ strtoupper(config('app.name')) }} is not sponsored, authorized or endorsed by any producer of plastic building bricks, including The LEGO Group, MEGA Brands, and K'Nex,
                     and no resemblance to the products of these companies is intended.
                     Use of this site signifies your acceptance of the Terms and Conditions.
