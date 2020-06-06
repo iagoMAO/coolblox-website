@@ -9,10 +9,41 @@ class PlaceController extends Controller
 {
     public function view($id)
     {
+        $favorited = collect(Auth::user()->favorited_places)->contains($id);
+
         $place = \App\Game::where('id', '=', $id)->firstOrFail();
         $user = \App\User::where('id', '=', $place->uid)->firstOrFail();
         $owner = $place->uid == Auth::user()->id;
-        return view('place', ["place" => $place,"user" => $user,"owner" => $owner]);
+        return view('place', ["place" => $place,"user" => $user,"owner" => $owner,"favorited" => $favorited]);
+    }
+
+    public function favorite($id)
+    {
+        $place = \App\Game::where('id', '=', $id)->firstOrFail();
+
+        switch($place)
+        {
+            case true:
+                $user = Auth::user();
+                $current = collect($user->favorited_places);
+                $new = $current->push($place->id);
+
+                if($current->has($place->id))
+                {
+                    return redirect()->back();
+                }
+                else {
+                    $user->update([
+                        'favorited_places' => $new,
+                    ]);
+                }
+
+                return redirect()->back();
+                break;
+            default:
+                return abort(404);
+                break;
+        }
     }
 
     public function edit($id)
@@ -52,8 +83,9 @@ class PlaceController extends Controller
                     "ipv4" => $data["ipv4"],
                     "port" => $data["port"],
                 ]);
-        
-                return redirect('place/' . $id);
+                
+                $updated = $place->updated_at->format("H:i:s A");
+                return redirect()->back()->with('msg', 'Your changes to the item have been saved. (' . $updated . ')');
                 break;
             default:
                 return abort(404);

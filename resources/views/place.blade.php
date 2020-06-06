@@ -11,6 +11,13 @@
                         <div class="place-big-thumbnail">
                             <img src="{{asset('/img/res/place.png')}}">
                         </div>
+                        <div class="favorite-place-action">
+                            @if($favorited)
+                                <a style="color: #ccc">Favorite</a>
+                            @else
+                                <a href="{{$place->id}}/favorite">Favorite</a>
+                            @endif
+                        </div>
                         <div class="place-big-area my-2 text-center py-3">
                             <span class="place-big-public"></span>
                             <span class="place-big-public-text">Public</span>

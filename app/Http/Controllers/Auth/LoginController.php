@@ -38,6 +38,19 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    public function authenticated(Request $request, $user)
+    {
+        $login = $user->last_login_at;
+        $tickets = $user->tickets;
+        $login == Carbon::today()->toDateTimeString() ? $tickets = $user->tickets + 10 : $tickets = $user->tickets;
+
+        $user->update([
+            'last_login_at' => Carbon::now()->toDateTimeString(),
+            'last_login_ip' => $request->getClientIp(),
+            'tickets' => $tickets,
+        ]);
+    }
+
     public function username()
     {
         return 'name';

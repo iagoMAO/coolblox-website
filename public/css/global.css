@@ -337,7 +337,7 @@ form {
 }
 
 .register-box-container {
-    width: 400px;
+    width: 450px;
     height: 100%;
     text-align: center;
 }
@@ -350,7 +350,6 @@ form {
 
 .register-block {
     text-align: left;
-    border-bottom: 1px solid #ccc;
 }
 
 .register-fieldset {
@@ -359,7 +358,7 @@ form {
 
 .register-fieldset legend {
     font-size: 15px;
-    margin: 0px;
+ margin: 0px;   
 }
 
 .register-fieldset-p {
@@ -623,6 +622,23 @@ form {
 
 /* USER PROFILE */
 
+#favorited-places-header {
+    font-family: Comic Sans MS;
+    font-size: 11px;
+    padding: 2px;
+    letter-spacing: 0px;
+    font-weight: Bold;
+}
+
+#favorited-places {
+    max-width: 448px;
+    width: 448px;
+}
+
+.favorited-places-row {
+    max-width: 380px;
+}
+
 .profile-action-box a {
     padding-top: 3px;
     font-size: 11px;
@@ -669,7 +685,7 @@ form {
 .profile-desc-box p {
     width: 270px;
     margin: 0px;
-    word-wrap: break-word;
+    white-space: pre-line;
     font-size: 11px;
 }
 
@@ -737,6 +753,22 @@ form {
     max-height: 85px;
 }
 
+.favorite-place-action {
+    border: 1px dashed #555;
+    width: 422px;
+    padding: 2px;
+    display: block;
+    color: #555;
+    font-family: verdana;
+    font-size: 11px;
+    text-align: left;
+    overflow: auto;
+    text-align: center;
+    margin-top: -1px;
+    max-height: 85px;
+}
+
+
 /* FEATURED PLACE INDEX */
 
 #featured-place-header {
@@ -771,6 +803,14 @@ form {
     width: 32px;
     height: 32px;
     background-image: url('../../img/fp/icons/House.png');
+    display: inline-block;
+    z-index: 0;
+}
+
+.frontpage-admin-icon {
+    width: 32px;
+    height: 32px;
+    background-image: url('../../img/fp/icons/Admin.png');
     display: inline-block;
     z-index: 0;
 }
@@ -823,12 +863,15 @@ form {
 
 .place-edit-container label {
     display: block;
+    font-size: 13px;
 }
 
 .place-edit-container input {
     border: 1px dashed #777;
     width: 100%;
     font-size: 12px;
+    color: #000;
+    font-family: Verdana;
     height: 25px;
     padding-left: 10px;
 }
@@ -847,7 +890,7 @@ form {
 }
 
 .place-edit-box-container {
-    width: 400px;
+    width: 480px;
     height: 100%;
     text-align: center;
 }
@@ -857,5 +900,55 @@ form {
 }
 
 .place-edit-thumbnail img {
-    max-height: 199px;
+    max-height: 242px;
+}
+
+.place-edit-alert {
+    background-color: #ccc;
+    border: 1px dashed red;
+    width: 100%;
+    padding: 8px;
+    color: red;
+    font-size: 11px;
+    font-family: Verdana;
+}
+
+/* USER PERSONAL */
+
+/* EDIT PROFILE */
+
+#user-edit-box {
+    width: 600px;
+}
+
+.user-edit-box-container {
+    width: 400px;
+}
+
+.edit-profile-blurb {
+    border: 1px dashed #555;
+    height: 280px;
+    max-height: 280px;
+    min-height: 280px;
+    width: 220px;
+    font-family: Verdana;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.edit-link {
+    font-family: Comic Sans MS;
+    font-size: 14px;
+}
+
+.alert-session {
+    width: 450px;
+}
+
+.favorited {
+    width: 110px;
+}
+
+.favorited-thumb {
+    border: 1px solid #000;
 }

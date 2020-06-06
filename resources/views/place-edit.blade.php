@@ -8,6 +8,11 @@
                 <h5 id="box-header-large" class="box-header">Configure Place</h5>
                 <div class="place-edit-box-container p-3 ml-auto mr-auto">
                     <div class="place-edit-container">
+                        @if(session()->has('msg'))
+                            <div class="place-edit-alert">
+                                {{ session()->get('msg') }}
+                            </div>
+                        @endif
                         <form method="POST" action="">
                             @csrf
                             <label for="name">Name:</label>

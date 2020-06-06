@@ -20,7 +20,7 @@
                         <div class="profile-action-box text-left">
                             <a href="#">Inbox</a>
                             <a href="#">Change Character</a>
-                            <a href="#">Edit Profile</a>
+                            <a href="/user/personal/edit">Edit Profile</a>
                             <a href="/user/{{Auth::user()->id}}">View Public Profile</a>
                             <a id="disabled">Create New Place</a>
                             <p>(0 Remaining)</p>

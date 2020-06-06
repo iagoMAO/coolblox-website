@@ -18,7 +18,7 @@
                     </div>
                     <div class="col-auto p-0">
                         <div class="profile-desc-box py-4">
-                            <p>User blurbs are yet to be added. Please be patient!</p>
+                            <p class="profile-desc-text">{{ Auth::user()->blurb }}</p>
                         </div>
                     </div>
                 </div>
@@ -44,13 +44,39 @@
                             </div>
                             <div class="showcase-place-description">{{$place->desc}}</div>
                             @if($owner)
-                            <div class="showcase-place-action">
-                                <a href="/place/{{$place->id}}/edit">Configure this place</a>
-                            </div>
+                                <div class="showcase-place-action">
+                                    <a href="/place/{{$place->id}}/edit">Configure this place</a>
+                                </div>
                             @endif
                         </div>
                     </div>
                 @endforeach
+            </div>
+            <div class="box-container my-2" id="favorited-places">
+                <h5 class="box-header text-center" id="favorited-places-header">Favorites</h5>
+                <div class="m-0 row justify-content-left ml-auto mr-auto favorited-places-row">
+                    @foreach($favorites as $favorited)
+                    @php
+                        $user = \App\User::where('id', '=', $favorited->uid)->first();
+                    @endphp
+                    <div class="col-auto p-2">
+                        <div class="place-container favorited">
+                            <div class="favorited">
+                                <a href="/place/{{$favorited->id}}">
+                                    <img width="110" height="110" class="favorited-thumb" src="{{asset('/img/res/place.png')}}">
+                                </a>
+                            </div>
+                            <div class="place-name">
+                                <a href="/place/{{$favorited->id}}">{{$favorited->name}}</a>
+                            </div>
+                            <div class="place-details">
+                                <span class="place-detail-label">Creator:</span>
+                                <span class="place-detail-string"><a href="/user/1">{{ $user->name }}</a></span>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>

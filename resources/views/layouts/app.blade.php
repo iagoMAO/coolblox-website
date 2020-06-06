@@ -36,7 +36,7 @@
                             <div class="box-container" id="user-panel">
                                 <div class="user-panel-content">
                                     <span class="tickets-icon"></span>
-                                    <span class="tickets-label">0 Tickets</span>
+                                    <span class="tickets-label">{{ Auth::user()->tickets }} Tickets</span>
                                 </div>
                             </div>
                         @endguest

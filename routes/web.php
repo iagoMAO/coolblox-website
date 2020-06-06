@@ -14,19 +14,33 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $fgame = \App\Game::all()->random();
-    $user = \App\User::where('id', '=', $fgame->uid)->first();
-    return view('welcome', ["game" => $fgame, "user" => $user]);
+    if(!\App\Game::all()->isEmpty()) {
+        $game = \App\Game::all()->random();
+        $user = \App\User::where('id', '=', $game->uid)->first();
+
+        return view('welcome', ["game" => $game, "user" => $user]);
+    }
+    else {
+        return view('welcome');
+    }
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/games', 'GamesController@index');
-Route::get('/place/{id}', 'PlaceController@view');
-Route::get('/user/{id}', 'ProfileController@view');
+Route::middleware(["auth"])->group(function() {
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/games', 'GamesController@index');
+    
+    Route::get('/place/{id}', 'PlaceController@view');
+    Route::get('/place/{id}/favorite', 'PlaceController@favorite');
 
-Route::get('/place/{id}/edit', 'PlaceController@edit');
-Route::post('/place/{id}/edit', 'PlaceController@doEdit');
+    Route::get('/user/{id}', 'ProfileController@view');
 
-Route::get('/api/games/{category}', 'GamesController@ajax_games');
+    Route::get('/user/personal/edit', 'UserPersonalController@edit_profile');
+    Route::post('/user/personal/edit', 'UserPersonalController@edit_profile_post');
+
+    Route::get('/place/{id}/edit', 'PlaceController@edit');
+    Route::post('/place/{id}/edit', 'PlaceController@doEdit');
+
+    Route::get('/api/games/{category}', 'GamesController@ajax_games');
+});

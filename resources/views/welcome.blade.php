@@ -59,40 +59,42 @@
 
                 </div>
             </a>
-            <div id="featured-place" class="box-container my-2">
-                <div id="featured-place-header">
-                    Featured Free Game: {{$game->name}}
-                </div>
-                <div class="row justify-content-left ml-2">
-                    <div class="col-auto p-0">
-                        <div style="border: 0;" class="place-big-thumbnail">
+            @if(!empty($game))
+                <div id="featured-place" class="box-container my-2">
+                    <div id="featured-place-header">
+                        Featured Free Game: {{$game->name}}
+                    </div>
+                    <div class="row justify-content-left ml-2">
+                        <div class="col-auto p-0">
+                            <div style="border: 0;" class="place-big-thumbnail">
+                                <a href="/place/{{$game->id}}">
+                                    <img src="{{asset('/img/res/place.png')}}">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-auto pl-2">
                             <a href="/place/{{$game->id}}">
-                                <img src="{{asset('/img/res/place.png')}}">
+                                <img src="{{asset('/img/res/PlayThis.png')}}">
                             </a>
-                        </div>
-                    </div>
-                    <div class="col-auto pl-2">
-                        <a href="/place/{{$game->id}}">
-                            <img src="{{asset('/img/res/PlayThis.png')}}">
-                        </a>
-                        <div class="featured-place-detail">
-                            Updated: {{$game->updated_at->diffForHumans()}}
-                        </div>
-                        <div class="featured-place-detail">
-                            Favorited: 0 times
-                        </div>
-                        <div class="featured-place-detail">
-                            Visited: 0 times
-                        </div>
-                        <div class="featured-place-avatar">
-                            <img src="{{asset('/img/res/player.png')}}">
-                        </div>
-                        <div class="featured-place-detail">
-                            Creator: <a href="/user/{{$user->id}}">{{$user->name}}</a>
+                            <div class="featured-place-detail">
+                                Updated: {{$game->updated_at->diffForHumans()}}
+                            </div>
+                            <div class="featured-place-detail">
+                                Favorited: 0 times
+                            </div>
+                            <div class="featured-place-detail">
+                                Visited: 0 times
+                            </div>
+                            <div class="featured-place-avatar">
+                                <img src="{{asset('/img/res/player.png')}}">
+                            </div>
+                            <div class="featured-place-detail">
+                                Creator: <a href="/user/{{$user->id}}">{{$user->name}}</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endif
         </div>
         <div class="col-auto p-0 ml-2">
             <div id="roblox-facts" class="box-container">
@@ -101,14 +103,16 @@
                 </h5>
                 <div class="container">
                     <div class="marqueepls">
+                        @if(!empty($game))
+                            <div class="frontpage-marquee-text">
+                                <span class="frontpage-house-icon float-left"></span>
+                                <a href="/place/{{$game->id}}">{{$game->name}}</a>
+                                <span>has been favorited <strong>0</strong> times today</span>
+                            </div>
+                        @endif
                         <div class="frontpage-marquee-text">
-                            <span class="frontpage-house-icon float-left"></span>
-                            <a href="/place/{{$game->id}}">{{$game->name}}</a>
-                            <span>has been favorited <strong>0</strong> times today</span>
-                        </div>
-                        <div class="frontpage-marquee-text">
-                            <span class="frontpage-house-icon float-left"></span>
-                            <span>{{config('app.name')}} is cool!</span>
+                            <span class="frontpage-admin-icon float-left"></span>
+                            <span>{{strtoupper(config('app.name'))}} currently has {{ \App\User::all()->count() }} users</span>
                         </div>
                         <div class="frontpage-marquee-text">
                             <span class="frontpage-house-icon float-left"></span>
